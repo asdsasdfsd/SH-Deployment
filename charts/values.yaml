@@ -3,7 +3,7 @@ frontend:
     repository: tigerwk/sh-vue
     tag: 3
   service:
-    type: LoadBalancer
+    type: NodePort
     port: 80
 
 backend:
