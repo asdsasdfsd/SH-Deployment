@@ -8,7 +8,7 @@ spec:
     - port: {{ .Values.backend.service.port }}
       targetPort: 8080
   selector:
-    app: {{ .Release.backend.Name }}-backend
+    app: {{ .Release.Name }}-backend
 
 ---
 
