@@ -21,7 +21,7 @@ database:
   mysqlRootPassword: root_password
   mysqlUser: user
   mysqlPassword: user_password
-  mysqlDatabase: mydb
+  mysqlDatabase: ad
   persistence:
     enabled: true
     size: 1Gi
