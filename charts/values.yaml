@@ -3,7 +3,7 @@ frontend:
     repository: tigerwk/sh-vue
     tag: 3
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 80
 
 backend:
