@@ -7,4 +7,4 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: { { .Values.database.persistence.size } }
+      storage: { { .Values.database.persistence.size | default "1Gi" } }
