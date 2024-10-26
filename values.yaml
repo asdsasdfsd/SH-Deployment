@@ -1,0 +1,27 @@
+frontend:
+  image:
+    repository: tigerwk/sh-spring
+    tag: 3
+  service:
+    type: ClusterIP
+    port: 80
+
+backend:
+  image:
+    repository: tigerwk/sh-vue
+    tag: 3
+  service:
+    type: ClusterIP
+    port: 8080
+
+database:
+  image:
+    repository: mysql
+    tag: 5.7
+  mysqlRootPassword: root_password
+  mysqlUser: user
+  mysqlPassword: user_password
+  mysqlDatabase: mydb
+  persistence:
+    enabled: true
+    size: 1Gi
