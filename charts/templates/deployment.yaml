@@ -20,10 +20,14 @@ spec:
           env:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://{{ .Release.Name }}-database:3306/{{ .Values.database.mysqlDatabase }}"
-            - name: SPRING_DATASOURCE_USERNAME
-              value: {{ .Values.database.mysqlUser }}
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: {{ .Values.database.mysqlPassword }}
+            - name: DB_USERNAME
+              value: "{{ .Values.database.mysqlUser }}"
+            - name: DB_PASSWORD
+              value: "{{ .Values.database.mysqlPassword }}"
+            - name: MAIL_URL
+              value: "http://your-mail-service-url:8081"  
+            - name: RESOURCE_URL
+              value: "http://your-resource-service-url:8080"  
 
 ---
 
