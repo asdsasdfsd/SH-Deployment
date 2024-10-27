@@ -6,7 +6,7 @@ spec:
   type: {{ .Values.backend.service.type }}
   ports:
     - port: {{ .Values.backend.service.port }}
-      targetPort: 8080
+      targetPort: 7079
   selector:
     app: {{ .Release.Name }}-backend
 
