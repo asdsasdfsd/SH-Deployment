@@ -34,5 +34,6 @@ spec:
   ports:
     - port: {{ .Values.frontend.service.port }}
       targetPort: 80
+      nodePort: 31012
   selector:
     app: {{ .Release.Name }}-frontend
