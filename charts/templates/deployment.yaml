@@ -112,4 +112,48 @@ spec:
         - name: backend
           image: "tigerwk/sh-chatmicroservice:latest"
           ports:
-            - containerPort: 8082
+            - containerPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-mailservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-mailservice
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-mailservice
+    spec:
+      containers:
+        - name: backend
+          image: "tigerwk/sh-mailmicroservice:latest"
+          ports:
+            - containerPort: 8081
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-resourceservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-resourceservice
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-resourceservice
+    spec:
+      containers:
+        - name: backend
+          image: "tigerwk/sh-resourcemicroservice:latest"
+          ports:
+            - containerPort: 8080
